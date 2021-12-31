@@ -1,8 +1,7 @@
-import React, { useContext } from 'react'
-import { AppContext } from './contexts/app-context'
+import {useAppContext} from '../contexts/app-context'
 
 export const Setting = () => {
-    const context = useContext(AppContext)
+    const context = useAppContext()
 
     return (
         <input type='text' onChange={(e) => context.setUser({

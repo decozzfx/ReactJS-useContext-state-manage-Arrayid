@@ -1,8 +1,7 @@
-import React,{useContext} from 'react'
-import { AppContext } from './contexts/app-context'
+import {useAppContext} from '../contexts/app-context'
 
 const NavbarUserText = () => {
-    const context = useContext(AppContext)
+    const context = useAppContext()
 
     return ( <span>Hi, {context.user.name}</span> )
 }
