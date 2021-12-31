@@ -6,6 +6,8 @@ function reducer(state, action){
             return {...state, count : state.count + action.payload}
         case 'decrement':
             return {...state, count : state.count - action.payload}
+        case 'toggleTheme':
+            return {...state, theme: state.theme === 'light' ? 'dark' : 'light'}
         default:
             throw new Error()
     }
@@ -23,9 +25,14 @@ const Reducer = () => {
 
     return (
         <div>
-            <button onClick={() => dispatch({type : 'increment', payload : 2})}>+</button>
-            <span>{state.count}</span>
-            <button onClick={() => dispatch({type : 'decrement', payload : 2})}>-</button>
+            <br />
+            <button onClick={() => dispatch({type : 'increment', payload : 2})}>+</button><br />
+            <span>{state.count}</span><br />
+            <button onClick={() => dispatch({type : 'decrement', payload : 2})}>-</button><br />
+            <hr />
+            Theme : {state.theme} <br />
+            <br />
+            <button onClick={() => dispatch({type : 'toggleTheme'})}>Toggle Theme</button>
         </div>
     )
 }
