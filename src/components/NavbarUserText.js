@@ -1,9 +1,10 @@
 import {useAppContext} from '../contexts/app-context'
 
 const NavbarUserText = () => {
-    const context = useAppContext()
+    const [state] = useAppContext()
+    console.info('navbar user text : render')
 
-    return ( <span>Hi, {context.user.name}</span> )
+    return ( <span>Hi, {state.user.name}</span> )
 }
 
 export default NavbarUserText

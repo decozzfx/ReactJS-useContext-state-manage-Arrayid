@@ -1,9 +1,9 @@
-import {useAppContext} from '../contexts/app-context'
+import {useThemeContext} from '../contexts/theme-context'
 export default function DisplayTheme() {
-    const context = useAppContext()
+    const [state] = useThemeContext()
+    console.info('toggle theme : render')
+
     return(
-        <div>
-            {context.theme}
-        </div>
+        <div>{state.theme}</div>
     )
 }

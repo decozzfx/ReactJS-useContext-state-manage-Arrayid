@@ -1,12 +1,9 @@
 import {useAppContext} from '../contexts/app-context'
 
 export const Setting = () => {
-    const context = useAppContext()
+    const [state,dispatch] = useAppContext()
 
     return (
-        <input type='text' onChange={(e) => context.setUser({
-            ...context.user, // merch data lama agar tidak hilang
-            name : e.target.value,            
-        })} placeholder='change name' value={context.user.name ?? ''}/>
+        <input type='text' onChange={(e) => dispatch({type : 'updateUser', payload : {...state.user, name : e.target.value}})} placeholder='change name' value={state.user.name ?? ''}/>
     )
 }

@@ -2,10 +2,11 @@ import {useAppContext} from '../contexts/app-context'
 
 const NavbarUserAvatar = () => {
 
-    const context = useAppContext()
+    const [state] = useAppContext()
+    console.info('navbar user avatar : render')
 
 
-    return ( <img src={context.user.avatar} alt="avatar" width="50" /> )
+    return ( <img src={state.user.avatar} alt="avatar" width="50" /> )
 }
 
 export default NavbarUserAvatar
